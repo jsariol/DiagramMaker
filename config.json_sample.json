@@ -1,0 +1,6 @@
+{
+    "DEPLOYMENT_NAME":"demo-gpt-35-turbo-16k",
+    "OPENAI_API_BASE":"https://demoaoai-xxxxxx.openai.azure.com/",
+	"OPENAI_API_KEY": "xxxxxxxxxxxxxxxxxxxx",
+    "OPENAI_API_VERSION":"2024-02-15-preview"
+}
