@@ -1,5 +1,4 @@
-import os
-from openai import AzureOpenAI  # This test openai version is 1.13.3
+from openai import AzureOpenAI # This test openai version is 1.13.3
 import json
 
 # Load config values
@@ -12,19 +11,19 @@ client = AzureOpenAI(
   api_version=config_details["OPENAI_API_VERSION"]
 )
 
-url = 'https://learn.microsoft.com/en-us/azure/app-service/overview'
-question_num = 5
+# 
+content = 'Azure authentication'
 
 
-def create_question(url, question_num):
+def create_diagram(content):
 
-    print("Creating a question based on the URL. Please wait...")
+    print("Creating a diagram. Please wait...")
 
     message_text = [
         {"role":"system",
-        "content":"You provide a problem against Azure learners. Please create a four-choice question based on the contents of the specified URL. Make a set of questions and answers. Please include a brief explanation of the answer. The number of questions to create is "+str(question_num)+"."},
+        "content":"You are tasked with illustrating Azure learners using mermaid diagrams. Here is a question to help you get started."},
         {"role":"user",
-        "content":url}
+        "content":content}
     ]
 
     completion = client.chat.completions.create(
@@ -41,4 +40,4 @@ def create_question(url, question_num):
     print(completion.choices[0].message.content)
 
 
-create_question(url, question_num)
+create_diagram(content)
