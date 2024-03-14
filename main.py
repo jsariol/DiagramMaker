@@ -1,5 +1,5 @@
 import os
-from openai import AzureOpenAI # This test openai version is 1.13.3
+from openai import AzureOpenAI  # This test openai version is 1.13.3
 import json
 
 # Load config values
